@@ -49,6 +49,11 @@ Auth uses JWT cookies signed with `JWT_SECRET` from `.env` (falls back to a hard
 
 `VirtualFileSystem` (`src/lib/file-system.ts`) is an in-memory tree of `FileNode` objects (Map-based, not persisted to disk). It lives client-side in `FileSystemContext` and is also reconstructed server-side on every API call from the serialized form sent in the request body. The two AI tools operate on the server-side instance; the client-side instance is mutated via `handleToolCall`.
 
+### Database
+
+The database schema is defined in the @prisma/schema.prisma file. Reference it anytime you need to understand
+the structure of data stored in the database.
+
 ### Preview Pipeline
 
 `src/lib/transform/jsx-transformer.ts` handles client-side compilation:
